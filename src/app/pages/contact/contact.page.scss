@@ -1,0 +1,39 @@
+.header {
+
+    .flex {
+        display: flex;
+        justify-content: center;
+    }
+
+    .border-transparent {
+        border: 4px solid transparent;
+        border-radius: 50%;
+        width: fit-content;
+    }
+
+    .img-box {
+        border-radius: 50%;
+        height: 130px;
+        overflow: hidden;
+        width: 130px;
+    }
+
+    h2, p {
+        color: #ffffff;
+        margin: 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: bold;
+    }
+}
+
+.presentation {
+    margin-top: -50px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}

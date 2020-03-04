@@ -1,0 +1,18 @@
+<app-custom-header>NEWS</app-custom-header>
+
+<ion-content>
+{{ 'home.Hello' | translate }}
+  <ion-card *ngFor="let item of [1,2,3,4]">
+    <img (error)="errorImage($event)" [src]="'https://image.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'"/>
+    <ion-card-header>
+      <ion-card-subtitle>{{ item }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        {{item}}
+      </p>
+      <ion-button ion-button fill="outline" href="#" large>Read full article</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
