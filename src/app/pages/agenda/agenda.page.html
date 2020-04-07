@@ -1,8 +1,21 @@
-<app-custom-header>AGENDA</app-custom-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      AGENDA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
   <div class="header">
-  <!-- todo dates -->
+    <nav>
+      <div *ngFor="let date of dates">
+        <div>
+          <ion-label>{{ date | date: 'd':'fr' }}</ion-label>
+          <ion-label>{{ date | date: 'EEEE':'fr' }}</ion-label>
+        </div>
+      </div>
+    </nav>
   </div>
 
   <div class="events">
