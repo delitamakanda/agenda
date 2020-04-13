@@ -16,18 +16,20 @@
       <ion-icon name="chatboxes" size="large"></ion-icon>
     </div>
     <div class="stretch"></div>
-    <ion-list>
-      <ion-item>
-        <ion-label>Username</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-button type="submit" fill="solid" color="primary" expand="full">
-        LOGIN
-      </ion-button>
-    </ion-list>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-button type="submit" fill="solid" color="primary" expand="full" [disabled]="loginForm.invalid">
+          LOGIN
+        </ion-button>
+      </ion-list>
+    </form>
   </div>
 </ion-content>
