@@ -6,5 +6,11 @@
     "alert": {
         "header": "Error",
         "msg": "There is a problem with this operation"
+    },
+    "signin": {
+        "linkSignupPage": "Créer un compte"
+    },
+    "signup": {
+        "linkSigninPage": "Se connecter"
     }
 }
