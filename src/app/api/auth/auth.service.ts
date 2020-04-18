@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
+import { baseUrl } from '../constants';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,6 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   nextUrl: string;
-  baseUrl: string = 'https://agenconf-api.herokuapp.com/api/';
 
   constructor(
     private apiService: ApiService,
@@ -71,22 +71,22 @@ export class AuthService {
   
   login(username: string, password: string): Observable<any>{
     let httpOptions = this.apiService.createHeaders();
-    let apiLoginEndpoint = `${this.baseUrl}auth/login/`;
+    let apiLoginEndpoint = `${baseUrl}auth/login/`;
     const data =  {
       username: username, 
       password: password
     }
     return this.http.post(apiLoginEndpoint, data, httpOptions);
 }
-register(username: string, email: string, password: string, password2: string): Observable<any>{
+register(data: any): Observable<any>{
     let httpOptions = this.apiService.createHeaders()
-    let apiRegisterEndpoint = `${this.baseUrl}auth/register`;
-    const data = {
-      username: username, 
-      email: email,
-      password: password,
-      password2: password2
+    let apiRegisterEndpoint = `${baseUrl}auth/register/`;
+    const items = {
+      username: data.username, 
+      email: data.email,
+      password: data.password,
+      password2: data.password2
     }
-    return this.http.post(apiRegisterEndpoint, data, httpOptions);
+    return this.http.post(apiRegisterEndpoint, items, httpOptions);
 }
 }
