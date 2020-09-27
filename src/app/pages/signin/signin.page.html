@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="flex-form">
+    <div class="logo ion-text-center">
+      <ion-icon name="chatbubbles-outline" size="large"></ion-icon>
+    </div>
+    <div class="stretch"></div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <app-print-error type="username" [control]="loginForm.get('username')"></app-print-error>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <app-print-error type="password" [control]="loginForm.get('password')"></app-print-error>
+        <ion-button type="submit" fill="solid" color="primary" expand="full" [disabled]="loginForm.invalid">
+          LOGIN
+        </ion-button>
+      </ion-list>
+    </form>
+    <a routerLink="/signup">{{ 'signin.linkSignupPage' | translate }}</a>
+    <ion-button (click)="openInfoPageModal()" fill="clear">
+      <ion-icon slot="icon-only" name="information-circle-outline" size="large"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

@@ -7,6 +7,8 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 
+import { SidebarComponent } from '../core/sidebar/sidebar.component';
+
 @NgModule({
   imports: [
     IonicModule,
@@ -14,6 +16,6 @@ import { TabsPage } from './tabs.page';
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, SidebarComponent]
 })
 export class TabsPageModule {}

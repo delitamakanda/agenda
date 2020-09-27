@@ -1,0 +1,62 @@
+<app-custom-back-header>CONTACT</app-custom-back-header>
+
+<ion-content [fullscreen]="true">
+  <app-custom-content title="NEWS">
+    <div class="header">
+      <div class="flex">
+        <div class="border-transparent">
+          <div class="img-box">
+            <img src="./assets/images/loren-williams.jpeg">
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <h2>Loren Williams</h2>
+      </div>
+      <div class="flex">
+        <p>Designer</p>
+      </div>
+    </div>
+
+    <ion-card class="presentation">
+      <ion-item lines="none">
+        <ion-label>
+          <h2><strong>ABOUT LOREN</strong></h2>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" class="bio">
+        <ion-label class="ion-text-wrap">Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora
+          maritima in Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis
+          provincialium et viatorum opibus pascebantur.</ion-label>
+      </ion-item>
+      <hr />
+      <div class="space-between">
+        <ion-button size="large" fill="clear">
+          <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+        </ion-button>
+        <ion-button size="large" fill="clear">
+          <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button size="large" fill="clear">
+          <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
+        </ion-button>
+        <ion-button size="large" fill="clear">
+          <ion-icon slot="icon-only" name="logo-github"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+
+    <ion-card>
+      <ion-item lines="none">
+        <ion-label>
+          <h2><strong>9 CONNECTIONS</strong></h2>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-avatar slot="start" *ngFor="let item of [1,2,3,4]">
+          <img src="./assets/images/loren-williams.jpeg" />
+        </ion-avatar>
+      </ion-item>
+    </ion-card>
+  </app-custom-content>
+</ion-content>

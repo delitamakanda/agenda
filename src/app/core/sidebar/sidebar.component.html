@@ -1,0 +1,34 @@
+<div>
+  <ion-menu-toggle auto-hide="false">
+    <div class="menu-header-bg"></div>
+    <div class="header-content">
+      <ion-avatar>
+        <img src="./assets/images/loren-williams.jpeg" alt="">
+      </ion-avatar>
+      <ion-label>
+        <h2>Loren Williams</h2>
+        <p>Dreamer</p>
+      </ion-label>
+    </div>
+    <div class="action-button">
+      <ion-button>
+        <ion-icon slot="start" name="add"></ion-icon>
+        Add Event
+      </ion-button>
+    </div>
+    <ion-list lines="none" class="menu-items">
+      <ion-item [routerLink]="['/']" routerLinkActive="router-link-active" >
+        <ion-icon name="pie-chart-outline" slot="start"></ion-icon>
+        <ion-label>My Account</ion-label>
+      </ion-item>
+      <ion-item [routerLink]="['/contact']" routerLinkActive="router-link-active" >
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label>Contact</ion-label>
+      </ion-item>
+      <ion-item (click)="logout()" routerDirection="root" lines="none" detail="false">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Se déconnecter</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-menu-toggle>
+</div>

@@ -1,0 +1,16 @@
+{
+    "home": {
+        "Hello": "Bonjour",
+        "Good Morning": "De bon matin"
+    },
+    "alert": {
+        "header": "Erreur",
+        "msg": "Il y a un problème avec votre opération"
+    },
+    "signin": {
+        "linkSignupPage": "Créer un compte"
+    },
+    "signup": {
+        "linkSigninPage": "Se connecter"
+    }
+}

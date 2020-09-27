@@ -24,3 +24,29 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.flex-form {
+    min-height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.stretch {
+    flex-grow: 1;
+}
+
+.header {
+    background-color: #FF4C4C;
+    height: auto;
+    padding-bottom: 60px;
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-flex-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

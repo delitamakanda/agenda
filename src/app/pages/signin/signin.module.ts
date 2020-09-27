@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { SigninPageRoutingModule } from './signin-routing.module';
+
+import { SigninPage } from './signin.page';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../../shared/shared.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ReactiveFormsModule,
+    SigninPageRoutingModule,
+    TranslateModule,
+    SharedModule
+  ],
+  declarations: [SigninPage]
+})
+export class SigninPageModule {}
