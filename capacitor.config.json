@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "agenda",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
