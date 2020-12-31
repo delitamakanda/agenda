@@ -212,9 +212,8 @@ update_ci_images:
   # Special stage which ensure this job is run first
   stage: .pre
   tags:
-    - shell
+    - docker
   before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - cd $PROJECT_PATH/.ci
   script:
     - docker build --tag $CI_REGISTRY_IMAGE/$STAGE_IMAGE:latest
