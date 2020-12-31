@@ -94,7 +94,7 @@ build_app:
   tags:
     - docker
   script:
-    - npm build
+    - npm run-script build
   artifacts:
     name: "agenda-app"
     paths:
