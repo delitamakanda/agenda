@@ -38,7 +38,7 @@ default:
   cache:
     key:
       files:
-        - yarn.lock
+        - package-lock.json
     paths:
       - node_modules
     policy: pull
@@ -49,11 +49,11 @@ install_dependencies:
   tags:
     - docker
   script:
-    - yarn install
+    - npm install
 
     # Compile angular dependencies for ivy before next step
     # So only this step has to push the cache
-    - yarn ngcc --properties es2015 --create-ivy-entry-points
+    - npm ngcc --properties es2015 --create-ivy-entry-points
 
   # Redefine cache to have default pull-push policy
   extends: .dependencies_cache
@@ -61,7 +61,7 @@ install_dependencies:
     policy: pull-push
   only:
     changes:
-      - yarn.lock
+      - npm.lock
 
 test_app:
   stage: build_and_test
@@ -80,8 +80,8 @@ test_app:
     # Drawbacks for including lint in this stage:
     # - this job is ~8 sec longer
     # - when the job fail it can be due to either the lint or build
-    - yarn lint
-    - yarn test:ci
+    - npm lint
+    - npm test:ci
 
     # Use package to have the average of coverage metrics output by unit tests
     - coverage-average $OUTPUT_PATH/coverage/text-summary.txt
@@ -105,7 +105,7 @@ build_app:
   tags:
     - docker
   script:
-    - yarn build
+    - npm build
   artifacts:
     name: "agenda-app"
     paths:
