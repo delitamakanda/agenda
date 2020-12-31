@@ -30,7 +30,7 @@ variables:
 default:
   # It saves ~10 sec to pull image from project container registry
   # instead of the default docker.io registry
-  image: $CI_REGISTRY_IMAGE/ci-node:latest
+  image: $CI_REGISTRY_IMAGE/ci-node:12-alpine
 
 # Define an hidden job to be used with extends
 # Better than default to avoid activating cache for all jobs
@@ -204,15 +204,15 @@ pages:
 # It's possible to push an official image to the project docker registry
 # without using this step and the multi-stage Dockerfile:
 # - docker pull node:12-alpine
-# - docker tag node:12-alpine registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:latest
+# - docker tag node:12-alpine registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:12-alpine
 # - docker login registry.gitlab.com
-# - docker push registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:latest
+# - docker push registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:12-alpine
 update_ci_images:
 
   # Special stage which ensure this job is run first
   stage: .pre
   tags:
-    - docker
+    - shell
   before_script:
     - cd $PROJECT_PATH/.ci
   script:
