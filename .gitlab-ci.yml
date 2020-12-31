@@ -13,6 +13,7 @@ stages:
   # Build & tests jobs have a similar execution time
   # Better execute them in parallel
   - build_and_test
+  - deploy
 
 # Global config for all jobs
 # Could be set in default section, personnal choice here
@@ -124,25 +125,3 @@ pages:
   when: manual
   only:
     - tags
-
-# Updates the CI images defined on .ci folder multi-stage Dockerfile
-update_ci_images:
-
-  # Special stage which ensure this job is run first
-  stage: .pre
-  tags:
-    - shell
-  before_script:
-    - cd $PROJECT_PATH/.ci
-
-  # Runs this job for each given parameter value in parallel
-  # - https://docs.gitlab.com/ee/ci/yaml/#parallel-matrix-jobs
-  parallel:
-    matrix:
-      - STAGE_IMAGE: [ci-node, ci-tests]
-
-        # Workaround for a GitLab issue not allowing one parameter
-        DUMMY_PARAM: dummy
-  only:
-    changes:
-      - .ci/Dockerfile
