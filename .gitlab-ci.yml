@@ -11,7 +11,7 @@ build:
     # Build App
     - npm run build
     # Test App
-    - npm test --watch=false
+    - npm run test:ci
   only:
     - master
 

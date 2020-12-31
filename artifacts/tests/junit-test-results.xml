@@ -1,102 +1,9 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome Headless 87.0.4280.88 (Mac OS 11.0.0)" package="" timestamp="2020-12-31T18:05:43" id="0" hostname="macbook-pro-de-delita.home" tests="30" errors="0" failures="21" time="1.083">
+<testsuite name="Chrome 87.0.4280.88 (Mac OS 11.0.0)" package="" timestamp="2020-12-31T21:59:32" id="0" hostname="macbook-pro-de-delita.home" tests="30" errors="0" failures="21" time="1.457">
   <properties>
-    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/87.0.4280.88 Safari/537.36"/>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"/>
   </properties>
-  <testcase name="CustomContentComponent should create" time="0.109" classname="CustomContentComponent"/>
-  <testcase name="CustomHeaderComponent should create" time="0.102" classname="CustomHeaderComponent"/>
-  <testcase name="ModalService should be created" time="0.023" classname="ModalService">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[ModalService -&gt; ModalController -&gt; ModalController]: 
-  NullInjectorError: No provider for ModalController!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'ModalService', 'ModalController', 'ModalController' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ModalService_Factory [as factory] (ng:///ModalService/ɵfac.js:5:40)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/shared/modal/modal.service.spec.ts:14:21)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="SigninPage should create" time="0.048" classname="SigninPage">
-    <failure type="">Failed: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/pages/signin/signin.page.spec.ts:22:23)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="Tab1Page should create" time="0.134" classname="Tab1Page">
-    <failure type="">Failed: The pipe 'translate' could not be found!
-Error: The pipe 'translate' could not be found!
-    at getPipeDef$1 (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24656:1)
-    at ɵɵpipe (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24619:1)
-    at Tab1Page_Template (ng:///Tab1Page.js:48:9)
-    at executeTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
-    at renderView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7112:1)
-    at renderComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8373:1)
-    at renderChildComponents (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6971:1)
-    at renderView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7137:1)
-    at ComponentFactory$1.create (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22192:1)
-    at initComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1983:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/tab1/tab1.page.spec.ts:23:23)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="ModalFlexEndComponent should create" time="0.046" classname="ModalFlexEndComponent"/>
-  <testcase name="SignupPage should create" time="0.04" classname="SignupPage">
-    <failure type="">Failed: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/pages/signup/signup.page.spec.ts:22:23)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="OfflineManagerService should be created" time="0.008" classname="OfflineManagerService">
+  <testcase name="OfflineManagerService should be created" time="0.048" classname="OfflineManagerService">
     <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[OfflineManagerService -&gt; Storage -&gt; Storage]: 
   NullInjectorError: No provider for Storage!
 error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'OfflineManagerService', 'Storage', 'Storage' ] })
@@ -113,146 +20,8 @@ error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'OfflineManager
     at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
 </failure>
   </testcase>
-  <testcase name="AppComponent should create the app" time="0.013" classname="AppComponent">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
-  NullInjectorError: No provider for TranslateService!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.LanguageService_Factory [as factory] (ng:///LanguageService/ɵfac.js:5:43)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
-</failure>
-  </testcase>
-  <testcase name="AppComponent should initialize the app" time="0.007" classname="AppComponent">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
-  NullInjectorError: No provider for TranslateService!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.LanguageService_Factory [as factory] (ng:///LanguageService/ɵfac.js:5:43)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
-</failure>
-  </testcase>
-  <testcase name="Tab3Page should create" time="0.055" classname="Tab3Page"/>
-  <testcase name="WelcomePage should create" time="0.063" classname="WelcomePage">
-    <failure type="">Failed: R3InjectorError(DynamicTestModule)[Router -&gt; Router]: 
-  NullInjectorError: No provider for Router!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'Router', 'Router' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
-    at getOrCreateInjectable (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:3921:1)
-    at ɵɵdirectiveInject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:13753:1)
-    at NodeInjectorFactory.WelcomePage_Factory [as factory] (ng:///WelcomePage/ɵfac.js:5:39)
-    at getNodeInjectable (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:4029:1)
-    at instantiateRootComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7826:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/pages/welcome/welcome.page.spec.ts:22:23)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="PrintErrorComponent should create" time="0.035" classname="PrintErrorComponent">
-    <failure type="">Failed: Cannot read property 'invalid' of undefined
-    at &lt;Jasmine&gt;
-    at PrintErrorComponent_Template (ng:///PrintErrorComponent.js:50:59)
-    at executeTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
-    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7172:1)
-    at refreshComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8326:1)
-    at refreshChildComponents (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6965:1)
-    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7222:1)
-    at renderComponentOrTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7286:1)
-    at tickRootContext (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8498:1)
-    at detectChangesInRootView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8523:1)
-    at RootViewRef.detectChanges (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9899:1)
-</failure>
-  </testcase>
-  <testcase name="ContactPage should create" time="0.091" classname="ContactPage"/>
-  <testcase name="InfoPage should create" time="0.061" classname="InfoPage"/>
-  <testcase name="SidebarComponent should create" time="0.025" classname="SidebarComponent">
-    <failure type="">Failed: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/core/sidebar/sidebar.component.spec.ts:22:23)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="AuthGuard should ..." time="0.003" classname="AuthGuard">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[AuthGuard -&gt; AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthGuard', 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-</failure>
-  </testcase>
-  <testcase name="Tab2Page should create" time="0.033" classname="Tab2Page">
-    <failure type="">Failed: R3InjectorError(DynamicTestModule)[EventDataService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'EventDataService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.EventDataService_Factory [as factory] (ng:///EventDataService/ɵfac.js:5:44)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
-</failure>
-    <failure type="">Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/tab2/tab2.page.spec.ts:23:23)
-    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-  </testcase>
-  <testcase name="TabsPage should create" time="0.015" classname="TabsPage"/>
-  <testcase name="LanguagePopoverPage should create" time="0.019" classname="LanguagePopoverPage">
+  <testcase name="ExploreContainerComponent should create" time="0.075" classname="ExploreContainerComponent"/>
+  <testcase name="LanguagePopoverPage should create" time="0.119" classname="LanguagePopoverPage">
     <failure type="">Failed: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
   NullInjectorError: No provider for TranslateService!
 error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
@@ -275,17 +44,144 @@ error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageServic
     at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
 </failure>
   </testcase>
-  <testcase name="LanguageService should be created" time="0.016" classname="LanguageService">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
-  NullInjectorError: No provider for TranslateService!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
+  <testcase name="SidebarComponent should create" time="0.113" classname="SidebarComponent">
+    <failure type="">Failed: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
     at &lt;Jasmine&gt;
     at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
     at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.LanguageService_Factory [as factory] (ng:///LanguageService/ɵfac.js:5:43)
+    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/core/sidebar/sidebar.component.spec.ts:22:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+  </testcase>
+  <testcase name="EventDataService should be created" time="0.012" classname="EventDataService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[EventDataService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'EventDataService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.EventDataService_Factory [as factory] (ng:///EventDataService/ɵfac.js:5:44)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
+</failure>
+  </testcase>
+  <testcase name="SignupPage should create" time="0.092" classname="SignupPage">
+    <failure type="">Failed: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/pages/signup/signup.page.spec.ts:22:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+  </testcase>
+  <testcase name="Tab3Page should create" time="0.057" classname="Tab3Page"/>
+  <testcase name="AuthService should be created" time="0.008" classname="AuthService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+</failure>
+  </testcase>
+  <testcase name="SigninPage should create" time="0.043" classname="SigninPage">
+    <failure type="">Failed: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/pages/signin/signin.page.spec.ts:22:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+  </testcase>
+  <testcase name="Tab2Page should create" time="0.044" classname="Tab2Page">
+    <failure type="">Failed: R3InjectorError(DynamicTestModule)[EventDataService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'EventDataService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.EventDataService_Factory [as factory] (ng:///EventDataService/ɵfac.js:5:44)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/tab2/tab2.page.spec.ts:23:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+  </testcase>
+  <testcase name="ModalService should be created" time="0.027" classname="ModalService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[ModalService -&gt; ModalController -&gt; ModalController]: 
+  NullInjectorError: No provider for ModalController!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'ModalService', 'ModalController', 'ModalController' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.ModalService_Factory [as factory] (ng:///ModalService/ɵfac.js:5:40)
     at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
     at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
@@ -293,12 +189,125 @@ error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageServic
 </failure>
     <failure type="">Error: Expected undefined to be truthy.
     at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/pages/language-popover/language.service.spec.ts:14:21)
+    at UserContext.&lt;anonymous&gt; (src/app/shared/modal/modal.service.spec.ts:14:21)
     at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
     at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
 </failure>
   </testcase>
-  <testcase name="AutoLoginGuard should be created" time="0.008" classname="AutoLoginGuard">
+  <testcase name="TabsPage should create" time="0.041" classname="TabsPage"/>
+  <testcase name="ModalFlexEndComponent should create" time="0.061" classname="ModalFlexEndComponent"/>
+  <testcase name="NewsDataService should be created" time="0.004" classname="NewsDataService"/>
+  <testcase name="Tab1Page should create" time="0.04" classname="Tab1Page">
+    <failure type="">Failed: The pipe 'translate' could not be found!
+Error: The pipe 'translate' could not be found!
+    at getPipeDef$1 (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24656:1)
+    at ɵɵpipe (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24619:1)
+    at Tab1Page_Template (ng:///Tab1Page.js:48:9)
+    at executeTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
+    at renderView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7112:1)
+    at renderComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8373:1)
+    at renderChildComponents (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6971:1)
+    at renderView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7137:1)
+    at ComponentFactory$1.create (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22192:1)
+    at initComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1983:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/tab1/tab1.page.spec.ts:23:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+  </testcase>
+  <testcase name="NetworkService should be created" time="0.032" classname="NetworkService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[NetworkService -&gt; Network -&gt; Network]: 
+  NullInjectorError: No provider for Network!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'NetworkService', 'Network', 'Network' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.NetworkService_Factory [as factory] (ng:///NetworkService/ɵfac.js:5:42)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
+</failure>
+  </testcase>
+  <testcase name="PrintErrorComponent should create" time="0.098" classname="PrintErrorComponent">
+    <failure type="">Failed: Cannot read property 'invalid' of undefined
+    at &lt;Jasmine&gt;
+    at PrintErrorComponent_Template (ng:///PrintErrorComponent.js:50:59)
+    at executeTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7172:1)
+    at refreshComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8326:1)
+    at refreshChildComponents (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6965:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7222:1)
+    at renderComponentOrTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7286:1)
+    at tickRootContext (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8498:1)
+    at detectChangesInRootView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8523:1)
+    at RootViewRef.detectChanges (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9899:1)
+</failure>
+  </testcase>
+  <testcase name="ApiService should be created" time="0.007" classname="ApiService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[ApiService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'ApiService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
+</failure>
+  </testcase>
+  <testcase name="AuthGuard should ..." time="0.013" classname="AuthGuard">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[AuthGuard -&gt; AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthGuard', 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+</failure>
+  </testcase>
+  <testcase name="CustomBackHeaderComponent should create" time="0.024" classname="CustomBackHeaderComponent">
+    <failure type="">Failed: R3InjectorError(DynamicTestModule)[NavController -&gt; UrlSerializer -&gt; UrlSerializer]: 
+  NullInjectorError: No provider for UrlSerializer!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'NavController', 'UrlSerializer', 'UrlSerializer' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
+    at Module.ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Function.NavController_Factory [as ɵfac] (node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js:727:166)
+    at Object.factory (node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js:728:96)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/shared/custom-back-header/custom-back-header.component.spec.ts:22:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+  </testcase>
+  <testcase name="AutoLoginGuard should be created" time="0.003" classname="AutoLoginGuard">
     <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[AutoLoginGuard -&gt; AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
   NullInjectorError: No provider for HttpClient!
 error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AutoLoginGuard', 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
@@ -321,6 +330,7 @@ error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AutoLoginGuard
     at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
 </failure>
   </testcase>
+  <testcase name="CustomHeaderComponent should create" time="0.092" classname="CustomHeaderComponent"/>
   <testcase name="WelcomeGuard should be created" time="0.013" classname="WelcomeGuard">
     <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[WelcomeGuard -&gt; Router -&gt; Router]: 
   NullInjectorError: No provider for Router!
@@ -344,134 +354,104 @@ error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'WelcomeGuard',
     at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
 </failure>
   </testcase>
-  <testcase name="ApiService should be created" time="0.003" classname="ApiService">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[ApiService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'ApiService', 'HttpClient', 'HttpClient' ] })
+  <testcase name="CustomContentComponent should create" time="0.057" classname="CustomContentComponent"/>
+  <testcase name="ContactPage should create" time="0.164" classname="ContactPage"/>
+  <testcase name="InfoPage should create" time="0.051" classname="InfoPage"/>
+  <testcase name="LanguageService should be created" time="0.017" classname="LanguageService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
+  NullInjectorError: No provider for TranslateService!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
     at &lt;Jasmine&gt;
     at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
     at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at Object.LanguageService_Factory [as factory] (ng:///LanguageService/ɵfac.js:5:43)
     at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
     at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
     at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
-</failure>
-  </testcase>
-  <testcase name="EventDataService should be created" time="0.011" classname="EventDataService">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[EventDataService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'EventDataService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.EventDataService_Factory [as factory] (ng:///EventDataService/ɵfac.js:5:44)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
-</failure>
-  </testcase>
-  <testcase name="NetworkService should be created" time="0.012" classname="NetworkService">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[NetworkService -&gt; Network -&gt; Network]: 
-  NullInjectorError: No provider for Network!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'NetworkService', 'Network', 'Network' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.NetworkService_Factory [as factory] (ng:///NetworkService/ɵfac.js:5:42)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at TestBedRender3.inject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
-</failure>
-  </testcase>
-  <testcase name="CustomBackHeaderComponent should create" time="0.028" classname="CustomBackHeaderComponent">
-    <failure type="">Failed: R3InjectorError(DynamicTestModule)[NavController -&gt; UrlSerializer -&gt; UrlSerializer]: 
-  NullInjectorError: No provider for UrlSerializer!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'NavController', 'UrlSerializer', 'UrlSerializer' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at Module.ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Function.NavController_Factory [as ɵfac] (node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js:727:166)
-    at Object.factory (node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js:728:96)
-    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
 </failure>
     <failure type="">Error: Expected undefined to be truthy.
     at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (src/app/shared/custom-back-header/custom-back-header.component.spec.ts:22:23)
+    at UserContext.&lt;anonymous&gt; (src/app/pages/language-popover/language.service.spec.ts:14:21)
     at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
     at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
 </failure>
   </testcase>
-  <testcase name="NewsDataService should be created" time="0.002" classname="NewsDataService"/>
-  <testcase name="ExploreContainerComponent should create" time="0.055" classname="ExploreContainerComponent"/>
-  <testcase name="AuthService should be created" time="0.005" classname="AuthService">
-    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[AuthService -&gt; ApiService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'AuthService', 'ApiService', 'HttpClient', 'HttpClient' ] })
+  <testcase name="AppComponent should initialize the app" time="0.025" classname="AppComponent">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
+  NullInjectorError: No provider for TranslateService!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
     at &lt;Jasmine&gt;
     at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
     at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ApiService_Factory [as factory] (ng:///ApiService/ɵfac.js:5:38)
+    at Object.LanguageService_Factory [as factory] (ng:///LanguageService/ɵfac.js:5:43)
     at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
     at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
+</failure>
+  </testcase>
+  <testcase name="AppComponent should create the app" time="0.013" classname="AppComponent">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[LanguageService -&gt; TranslateService -&gt; TranslateService]: 
+  NullInjectorError: No provider for TranslateService!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'LanguageService', 'TranslateService', 'TranslateService' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
     at injectInjectorOnly (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
     at ɵɵinject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
+    at Object.LanguageService_Factory [as factory] (ng:///LanguageService/ɵfac.js:5:43)
+    at R3Injector.hydrate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
+</failure>
+  </testcase>
+  <testcase name="WelcomePage should create" time="0.064" classname="WelcomePage">
+    <failure type="">Failed: R3InjectorError(DynamicTestModule)[Router -&gt; Router]: 
+  NullInjectorError: No provider for Router!
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'Router', 'Router' ] })
+    at &lt;Jasmine&gt;
+    at NullInjector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at R3Injector.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
+    at NgModuleRef$1.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
+    at Object.get (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22102:1)
+    at getOrCreateInjectable (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:3921:1)
+    at ɵɵdirectiveInject (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:13753:1)
+    at NodeInjectorFactory.WelcomePage_Factory [as factory] (ng:///WelcomePage/ɵfac.js:5:39)
+    at getNodeInjectable (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:4029:1)
+    at instantiateRootComponent (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7826:1)
+</failure>
+    <failure type="">Error: Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (src/app/pages/welcome/welcome.page.spec.ts:22:23)
+    at ZoneDelegate.invoke (node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push.QpwO.ProxyZoneSpec.onInvoke (node_modules/zone.js/dist/zone-testing.js:292:1)
 </failure>
   </testcase>
   <system-out>
-    <![CDATA[Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-header' is not a known element:
+    <![CDATA[Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-header' is not a known element:
 1. If 'app-custom-header' is an Angular component, then verify that it is part of this module.
 2. If 'app-custom-header' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-content' is not a known element:
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-content' is not a known element:
 1. If 'app-custom-content' is an Angular component, then verify that it is part of this module.
 2. If 'app-custom-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-header' is not a known element:
-1. If 'app-custom-header' is an Angular component, then verify that it is part of this module.
-2. If 'app-custom-header' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-content' is not a known element:
-1. If 'app-custom-content' is an Angular component, then verify that it is part of this module.
-2. If 'app-custom-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-back-header' is not a known element:
-1. If 'app-custom-back-header' is an Angular component, then verify that it is part of this module.
-2. If 'app-custom-back-header' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-content' is not a known element:
-1. If 'app-custom-content' is an Angular component, then verify that it is part of this module.
-2. If 'app-custom-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-modal-flex-end' is not a known element:
-1. If 'app-modal-flex-end' is an Angular component, then verify that it is part of this module.
-2. If 'app-modal-flex-end' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: '[DEPRECATED][ion-menu] Using the [main] attribute is deprecated, please use the "contentId" property instead:
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'split pane does not have a specified main node'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: '[DEPRECATED][ion-menu] Using the [main] attribute is deprecated, please use the "contentId" property instead:
 BEFORE:
   <ion-menu>...</ion-menu>
   <div main>...</div>
@@ -480,11 +460,31 @@ AFTER:
   <ion-menu contentId="main-content"></ion-menu>
   <div id="main-content">...</div>
 '
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) ERROR: 'Menu: must have a "content" element to listen for drag events on.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'split pane does not have a specified main node'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
-,Chrome Headless 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: 'Menu: must have a "content" element to listen for drag events on.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-header' is not a known element:
+1. If 'app-custom-header' is an Angular component, then verify that it is part of this module.
+2. If 'app-custom-header' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-content' is not a known element:
+1. If 'app-custom-content' is an Angular component, then verify that it is part of this module.
+2. If 'app-custom-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-back-header' is not a known element:
+1. If 'app-custom-back-header' is an Angular component, then verify that it is part of this module.
+2. If 'app-custom-back-header' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-custom-content' is not a known element:
+1. If 'app-custom-content' is an Angular component, then verify that it is part of this module.
+2. If 'app-custom-content' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) ERROR: ''app-modal-flex-end' is not a known element:
+1. If 'app-modal-flex-end' is an Angular component, then verify that it is part of this module.
+2. If 'app-modal-flex-end' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 87.0.4280.88 (Mac OS 11.0.0) WARN: 'Ionic Angular was already initialized. Make sure IonicModule.forRoot() is just called once.'
 
 ]]>
   </system-out>
