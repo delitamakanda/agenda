@@ -13,8 +13,6 @@ stages:
   # Build & tests jobs have a similar execution time
   # Better execute them in parallel
   - build_and_test
-  - publish
-  - deploy
 
 # Global config for all jobs
 # Could be set in default section, personnal choice here
@@ -22,15 +20,7 @@ variables:
   PROJECT_PATH: "$CI_PROJECT_DIR"
   OUTPUT_PATH: "$CI_PROJECT_DIR/www"
   APP_OUTPUT_PATH: "$CI_PROJECT_DIR/www"
-  DOCKER_IMAGE_NAME: "$CI_REGISTRY_IMAGE/app"
-  DOCKER_IMAGE_TAG: "$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA"
   IS_RELEASE_PIPELINE: "$CI_COMMIT_TAG"
-
-# Configuration shared for all jobs
-default:
-  # It saves ~10 sec to pull image from project container registry
-  # instead of the default docker.io registry
-  image: $CI_REGISTRY_IMAGE/ci-node:10.9.0
 
 # Define an hidden job to be used with extends
 # Better than default to avoid activating cache for all jobs
@@ -61,15 +51,13 @@ install_dependencies:
     policy: pull-push
   only:
     changes:
-      - npm.lock
+      - package-lock.json
 
 test_app:
   stage: build_and_test
   tags:
     - docker
 
-  # Use custom image because installing chrome in before_scripts takes ~30 sec
-  image: $CI_REGISTRY_IMAGE/ci-tests:latest
   script:
 
     # Could be in a parallel job during this stage but:
@@ -112,68 +100,6 @@ build_app:
       - $APP_OUTPUT_PATH
   extends: .dependencies_cache
 
-publish_container:
-  stage: publish
-  tags:
-    - shell
-  before_script:
-
-    # Don't include commit SHA1 in docker tag for releases
-    # The OR condition with column makes sure the command
-    # always returns a success exit code to avoid making the job fail
-    - test $IS_RELEASE_PIPELINE && DOCKER_IMAGE_TAG=$CI_COMMIT_TAG || ":"
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - cd $APP_OUTPUT_PATH
-  script:
-    - docker build --tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
-                   --tag $DOCKER_IMAGE_NAME:latest .
-
-    # Steps to test the docker image locally
-    # - docker login registry.gitlab.com
-    # - docker pull registry.gitlab.com/jbardon/angular-app-pipeline/app
-    # - docker run --rm -it -p 4200:80 registry.gitlab.com/jbardon/angular-app-pipeline/app
-    - docker push $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
-
-    # Only tag release versions with latest
-    - test $IS_RELEASE_PIPELINE && docker push $DOCKER_IMAGE_NAME:latest || ":"
-  dependencies:
-    - build_app
-  only:
-    - master
-    - develop
-    - tags
-
-# Deployment steps
-# - On dev when merging develop, master
-#   also on release pipeline for testing before deploying to prod
-#
-# - On prod when new tag (requires manual confirmation)
-
-# Dummy job for demonstration purpose
-deploy_dev:
-  stage: deploy
-  tags:
-
-    # Because docker image is set globally for the pipeline
-    # assumes a docker executor tag but a shell runner is faster
-    - shell
-  script:
-    - echo "Deploy $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG to $CI_ENVIRONMENT_NAME"
-  dependencies:
-    - build_app
-  environment:
-    name: dev
-
-    # Doesn't exists, just for demo purpose
-    url: https://dmakanda-dev.gitlab.io/agenda-app
-  only:
-    - develop
-    - master
-    - tags
-
-# Prod deploys to GitLab Pages
-# - https://docs.gitlab.com/ee/ci/yaml/#pages
-# - https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html
 pages:
   stage: deploy
   tags:
@@ -200,13 +126,6 @@ pages:
     - tags
 
 # Updates the CI images defined on .ci folder multi-stage Dockerfile
-#
-# It's possible to push an official image to the project docker registry
-# without using this step and the multi-stage Dockerfile:
-# - docker pull node:10.9.0
-# - docker tag node:10.9.0 registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:10.9.0
-# - docker login registry.gitlab.com
-# - docker push registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:10.9.0
 update_ci_images:
 
   # Special stage which ensure this job is run first
@@ -215,11 +134,6 @@ update_ci_images:
     - shell
   before_script:
     - cd $PROJECT_PATH/.ci
-  script:
-    - docker build --tag $CI_REGISTRY_IMAGE/$STAGE_IMAGE:latest
-                   --target $STAGE_IMAGE $PROJECT_PATH/.ci
-
-    - docker push $CI_REGISTRY_IMAGE/$STAGE_IMAGE:latest
 
   # Runs this job for each given parameter value in parallel
   # - https://docs.gitlab.com/ee/ci/yaml/#parallel-matrix-jobs
