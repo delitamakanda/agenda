@@ -8,6 +8,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:ci": "ng test --code-coverage --watch=false --browsers=GitlabHeadlessChrome",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "gh-pages": "ng build --base-href 'https://delitamakanda.github.io/agenda/' --prod && npx ngh --dir=www/"
@@ -37,7 +38,7 @@
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1000.0",
+    "@angular-devkit/build-angular": "^0.1100.5",
     "@angular/cli": "~10.0.5",
     "@angular/compiler": "~10.0.0",
     "@angular/compiler-cli": "~10.0.0",
@@ -56,6 +57,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-junit-reporter": "^2.0.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

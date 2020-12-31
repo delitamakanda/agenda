@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { InfoPage } from './tab2.page';
+import { InfoPage } from './info.page';
 
 describe('InfoPage', () => {
   let component: InfoPage;

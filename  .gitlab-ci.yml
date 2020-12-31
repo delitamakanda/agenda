@@ -1,0 +1,235 @@
+# References:
+# - https://docs.gitlab.com/ee/ci/yaml
+# - https://docs.gitlab.com/ee/ci/variables/README.html#list-all-environment-variables
+
+# Gitlab doesn't have a runner tagged with shell
+# You need to register you PC as a runner
+# - https://docs.gitlab.com/runner/install/
+# - https://docs.gitlab.com/runner/register/index.html
+
+stages:
+  - install
+
+  # Build & tests jobs have a similar execution time
+  # Better execute them in parallel
+  - build_and_test
+  - publish
+  - deploy
+
+# Global config for all jobs
+# Could be set in default section, personnal choice here
+variables:
+  PROJECT_PATH: "$CI_PROJECT_DIR"
+  OUTPUT_PATH: "$CI_PROJECT_DIR/www"
+  APP_OUTPUT_PATH: "$CI_PROJECT_DIR/www"
+  DOCKER_IMAGE_NAME: "$CI_REGISTRY_IMAGE/app"
+  DOCKER_IMAGE_TAG: "$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA"
+  IS_RELEASE_PIPELINE: "$CI_COMMIT_TAG"
+
+# Configuration shared for all jobs
+default:
+  # It saves ~10 sec to pull image from project container registry
+  # instead of the default docker.io registry
+  image: $CI_REGISTRY_IMAGE/ci-node:latest
+
+# Define an hidden job to be used with extends
+# Better than default to avoid activating cache for all jobs
+.dependencies_cache:
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - node_modules
+    policy: pull
+
+# Projects jobs definition
+install_dependencies:
+  stage: install
+  tags:
+    - docker
+  script:
+    - yarn install
+
+    # Compile angular dependencies for ivy before next step
+    # So only this step has to push the cache
+    - yarn ngcc --properties es2015 --create-ivy-entry-points
+
+  # Redefine cache to have default pull-push policy
+  extends: .dependencies_cache
+  cache:
+    policy: pull-push
+  only:
+    changes:
+      - yarn.lock
+
+test_app:
+  stage: build_and_test
+  tags:
+    - docker
+
+  # Use custom image because installing chrome in before_scripts takes ~30 sec
+  image: $CI_REGISTRY_IMAGE/ci-tests:latest
+  script:
+
+    # Could be in a parallel job during this stage but:
+    # - it would use an additional runner for a ~8 sec task
+    # - the additionnal job would load docker executor and cache (~25 sec)
+    # - the pipeline will fail only after build_app job is over
+    #
+    # Drawbacks for including lint in this stage:
+    # - this job is ~8 sec longer
+    # - when the job fail it can be due to either the lint or build
+    - yarn lint
+    - yarn test:ci
+
+    # Use package to have the average of coverage metrics output by unit tests
+    - coverage-average $OUTPUT_PATH/coverage/text-summary.txt
+  
+  # Collects coverage to display in MR an job results 
+  coverage: '/Coverage average is \d+.\d+%/'
+  artifacts:
+    name: "tests-and-coverage"
+    reports:
+      junit:
+        - $OUTPUT_PATH/tests/junit-test-results.xml
+      cobertura:
+        - $OUTPUT_PATH/coverage/cobertura-coverage.xml
+
+  # Avoids all pipeline artifacts to be fetched
+  dependencies: []
+  extends: .dependencies_cache
+
+build_app:
+  stage: build_and_test
+  tags:
+    - docker
+  script:
+    - yarn build
+  artifacts:
+    name: "agenda-app"
+    paths:
+      - $APP_OUTPUT_PATH
+  extends: .dependencies_cache
+
+publish_container:
+  stage: publish
+  tags:
+    - shell
+  before_script:
+
+    # Don't include commit SHA1 in docker tag for releases
+    # The OR condition with column makes sure the command
+    # always returns a success exit code to avoid making the job fail
+    - test $IS_RELEASE_PIPELINE && DOCKER_IMAGE_TAG=$CI_COMMIT_TAG || ":"
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - cd $APP_OUTPUT_PATH
+  script:
+    - docker build --tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+                   --tag $DOCKER_IMAGE_NAME:latest .
+
+    # Steps to test the docker image locally
+    # - docker login registry.gitlab.com
+    # - docker pull registry.gitlab.com/jbardon/angular-app-pipeline/app
+    # - docker run --rm -it -p 4200:80 registry.gitlab.com/jbardon/angular-app-pipeline/app
+    - docker push $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+
+    # Only tag release versions with latest
+    - test $IS_RELEASE_PIPELINE && docker push $DOCKER_IMAGE_NAME:latest || ":"
+  dependencies:
+    - build_app
+  only:
+    - master
+    - develop
+    - tags
+
+# Deployment steps
+# - On dev when merging develop, master
+#   also on release pipeline for testing before deploying to prod
+#
+# - On prod when new tag (requires manual confirmation)
+
+# Dummy job for demonstration purpose
+deploy_dev:
+  stage: deploy
+  tags:
+
+    # Because docker image is set globally for the pipeline
+    # assumes a docker executor tag but a shell runner is faster
+    - shell
+  script:
+    - echo "Deploy $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG to $CI_ENVIRONMENT_NAME"
+  dependencies:
+    - build_app
+  environment:
+    name: dev
+
+    # Doesn't exists, just for demo purpose
+    url: https://dmakanda-dev.gitlab.io/agenda-app
+  only:
+    - develop
+    - master
+    - tags
+
+# Prod deploys to GitLab Pages
+# - https://docs.gitlab.com/ee/ci/yaml/#pages
+# - https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html
+pages:
+  stage: deploy
+  tags:
+    - shell
+  script:
+    - mv $APP_OUTPUT_PATH $PROJECT_PATH/public
+  artifacts:
+    paths:
+      - public
+  dependencies:
+    - build_app
+
+  # Flags this job to let known GitLab it's
+  # deploying on prod environment
+  # Setup environments in Operations > Environments
+  environment:
+    name: prod
+    url: https://dmakanda-dev.gitlab.io/agenda-app
+
+  # Not runned automatically by the pipeline
+  # Requires to manually start the job in the UI
+  when: manual
+  only:
+    - tags
+
+# Updates the CI images defined on .ci folder multi-stage Dockerfile
+#
+# It's possible to push an official image to the project docker registry
+# without using this step and the multi-stage Dockerfile:
+# - docker pull node:12-alpine
+# - docker tag node:12-alpine registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:latest
+# - docker login registry.gitlab.com
+# - docker push registry.gitlab.com/jbardon/angular-app-pipeline/ci-node:latest
+update_ci_images:
+
+  # Special stage which ensure this job is run first
+  stage: .pre
+  tags:
+    - shell
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - cd $PROJECT_PATH/.ci
+  script:
+    - docker build --tag $CI_REGISTRY_IMAGE/$STAGE_IMAGE:latest
+                   --target $STAGE_IMAGE $PROJECT_PATH/.ci
+
+    - docker push $CI_REGISTRY_IMAGE/$STAGE_IMAGE:latest
+
+  # Runs this job for each given parameter value in parallel
+  # - https://docs.gitlab.com/ee/ci/yaml/#parallel-matrix-jobs
+  parallel:
+    matrix:
+      - STAGE_IMAGE: [ci-node, ci-tests]
+
+        # Workaround for a GitLab issue not allowing one parameter
+        DUMMY_PARAM: dummy
+  only:
+    changes:
+      - .ci/Dockerfile
