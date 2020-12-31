@@ -5,7 +5,7 @@
 # - avoids to have before_script for setup which slower the jobs
 
 # Install dependencies and build the project
-FROM node:12-alpine AS ci-node
+FROM node:11.5.0 AS ci-node
 
 # Run unit test
 FROM ci-node AS ci-tests
