@@ -6,7 +6,7 @@ describe('OfflineManagerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: OfflineManagerService = TestBed.get(OfflineManagerService);
+    const service: OfflineManagerService = TestBed.inject(OfflineManagerService);
     expect(service).toBeTruthy();
   });
 });

@@ -11,18 +11,19 @@ export class ApiService {
   ) { }
 
   createHeaders(token?: string) {
-    let data = {
-      'Content-Type': 'application/json'
-    }
+    const data = {
+      'Content-Type': 'application/json',
+      Authorization: ''
+    };
 
     if (token) {
-      data['Authorization'] = `Bearer ${token}`
+      data.Authorization = `Bearer ${token}`;
     }
 
-    let httpOptions = {
+    const httpOptions = {
       headers: new HttpHeaders(data)
-    }
-    
+    };
+
     return httpOptions;
   }
 }

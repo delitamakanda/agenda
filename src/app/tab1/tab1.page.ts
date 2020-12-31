@@ -13,7 +13,7 @@ export class Tab1Page implements OnInit {
   ngOnInit() { }
 
   errorImage(evt: any) {
-    evt.target.src = './assets/images/image-news.jpeg'
+    evt.target.src = './assets/images/image-news.jpeg';
   }
 
 }

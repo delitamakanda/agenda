@@ -28,7 +28,7 @@ export class SigninPage implements OnInit, OnDestroy {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(2)]],
       password: ['', [Validators.required, Validators.minLength(2)]],
-    })
+    });
   }
 
   ngOnDestroy() {
@@ -48,15 +48,15 @@ export class SigninPage implements OnInit, OnDestroy {
     const data = {
       username: this.loginForm.get('username').value,
       password: this.loginForm.get('password').value
-    }
+    };
     this.authLoginSub = this.authService.login(data.username, data.password)
       .subscribe(response => {
         const token = response.token || null;
-        const date = new Date(response.expires)
+        const date = new Date(response.expires);
         this.authService.performLogin(token, date);
         loading.dismiss();
       }, error => {
-        this.loginErrors = error['error']['detail'];
+        this.loginErrors = error.error.detail;
         loading.dismiss();
       });
   }
@@ -65,7 +65,7 @@ export class SigninPage implements OnInit, OnDestroy {
     const modal = await this.modalService.openModal({
       component: InfoPage,
       componentProps: {
-        description : "Login in with username: user and password: ionic"
+        description : 'Login in with username: user and password: ionic'
       }
     });
 

@@ -17,7 +17,7 @@ export class TabsPage implements OnInit {
      * Followning is the way you write documentation
      * @param pages Tabs of the app
      * @returns It returns an Array of objects
-    */
+     */
     this.pages = [
       {
         icon: 'newspaper-outline',

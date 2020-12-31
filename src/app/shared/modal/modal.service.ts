@@ -16,7 +16,7 @@ export class ModalService {
       ...opts
     });
 
-    modal.present()
+    modal.present();
     return modal;
   }
 }

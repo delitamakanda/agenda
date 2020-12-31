@@ -6,16 +6,16 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 })
 export class WelcomeGuard implements CanActivate {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   async canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean> {
-      const isComplete = localStorage.getItem('welcomeComplete');
-      if (!isComplete) {
-        this.router.navigateByUrl('/welcome');
-      }
-      return true;
+    const isComplete = localStorage.getItem('welcomeComplete');
+    if (!isComplete) {
+      this.router.navigateByUrl('/welcome');
+    }
+    return true;
   }
-  
+
 }

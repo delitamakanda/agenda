@@ -20,13 +20,13 @@ export class EventDataService {
   ) { }
 
   getEvents(forceRefresh: boolean = false): Observable<any[]> {
-    if (this.networkService.getCurrentNetworkStatus() == ConnectionStatus.Offline || !forceRefresh) {
+    if (this.networkService.getCurrentNetworkStatus() === ConnectionStatus.Offline || !forceRefresh) {
       return from(this.getLocalData('categories'));
     } else {
       return this.http.get<any>(`${baseUrl}/events/events`).pipe(
         map(res => res),
         tap(res => {
-          this.log('fetched events')
+          this.log('fetched events');
           this.setLocalData('events', res);
         }),
         catchError(this.handleError('getEvents', []))

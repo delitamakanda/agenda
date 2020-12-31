@@ -10,8 +10,8 @@ build:
     - npm install
     # Build App
     - npm run build
-    # Test App
-    - npm run test:ci
+    # Check Quality Code
+    - npm run lint
   only:
     - master
 

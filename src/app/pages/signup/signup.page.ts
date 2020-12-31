@@ -27,7 +27,7 @@ export class SignupPage implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       password2: ['', [Validators.required]]
-    })
+    });
   }
 
   ngOnDestroy() {
@@ -49,7 +49,7 @@ export class SignupPage implements OnInit, OnDestroy {
       email: this.signupForm.get('email').value,
       password: this.signupForm.get('password').value,
       password2: this.signupForm.get('password2').value
-    }
+    };
     this.authSignupSub = this.authService.register(data)
       .subscribe(response => {
         const token = response.token || null;
@@ -57,7 +57,7 @@ export class SignupPage implements OnInit, OnDestroy {
         this.authService.performLogin(token, date);
         loading.dismiss();
       }, error => {
-        this.signupErrors = error['error']['detail'];
+        this.signupErrors = error.error.detail;
         loading.dismiss();
       });
   }

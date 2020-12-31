@@ -8,11 +8,11 @@ import { ToastController } from '@ionic/angular';
 const STORAGE_REQ_KEY = 'agenda-app';
 
 interface StoredRequest {
-    url: string,
-    type: string,
-    data: any,
-    time: number,
-    id: string
+    url: string;
+    type: string;
+    data: any;
+    time: number;
+    id: string;
 }
 
 @Injectable({
@@ -29,16 +29,16 @@ export class OfflineManagerService {
     checkForEvents(): Observable<any> {
         return from(this.storage.get(STORAGE_REQ_KEY)).pipe(
             switchMap(storedOperations => {
-                let storedObj = JSON.parse(storedOperations);
+                const storedObj = JSON.parse(storedOperations);
                 if (storedObj && storedObj.length > 0) {
                     return this.sendRequests(storedObj).pipe(
-                        finalize(() => {
-                            let toast = this.toastController.create({
+                        finalize(async () => {
+                            const toast = await this.toastController.create({
                                 message: `Local data succesfully synced to API!`,
                                 duration: 3000,
                                 position: 'bottom'
                             });
-                            toast.then(toast => toast.present());
+                            toast.present();
 
                             this.storage.remove(STORAGE_REQ_KEY);
                         })
@@ -48,21 +48,21 @@ export class OfflineManagerService {
                     return of(false);
                 }
             })
-        )
+        );
     }
 
-    storeRequest(url, type, data) {
-        let toast = this.toastController.create({
+    async storeRequest(url, type, data) {
+        const toast = await this.toastController.create({
             message: `Your data is stored locally because you seem to be offline.`,
             duration: 3000,
             position: 'bottom'
         });
-        toast.then(toast => toast.present());
+        toast.present();
 
-        let action: StoredRequest = {
-            url: url,
-            type: type,
-            data: data,
+        const action: StoredRequest = {
+            url,
+            type,
+            data,
             time: new Date().getTime(),
             id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
         };
@@ -82,11 +82,11 @@ export class OfflineManagerService {
     }
 
     sendRequests(operations: StoredRequest[]) {
-        let obs = [];
+        const obs = [];
 
-        for (let op of operations) {
+        for (const op of operations) {
             console.log('Make one request: ', op);
-            let oneObs = this.http.request(op.type, op.url, op.data);
+            const oneObs = this.http.request(op.type, op.url, op.data);
             obs.push(oneObs);
         }
 

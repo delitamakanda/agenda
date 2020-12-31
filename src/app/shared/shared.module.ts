@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { CustomHeaderComponent } from "./custom-header/custom-header.component";
+import { CustomHeaderComponent } from './custom-header/custom-header.component';
 import { PrintErrorComponent } from './print-error/print-error.component';
 import { ModalFlexEndComponent } from './modal/modal-flex-end/modal-flex-end.component';
 import { CustomContentComponent } from './custom-content/custom-content.component';

@@ -26,14 +26,14 @@ export class LanguageService {
           this.setLanguage(val);
           this.selected = val;
         }
-      })
+      });
   }
 
   getLanguages(): Language[] {
     return [
       { text: 'English', value: 'en' },
       { text: 'Français', value: 'fr' }
-    ]
+    ];
   }
 
   setLanguage(lng) {

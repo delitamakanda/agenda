@@ -20,6 +20,6 @@ export class ApiModule {
         ApiService,
         { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
       ],
-    }
+    };
   }
 }

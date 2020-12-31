@@ -33,13 +33,13 @@ export class TokenInterceptor implements HttpInterceptor {
                 if (err instanceof HttpErrorResponse) {
                     if (err.status === 403 || err.status === 401) {
                         const currentUrl = this.router.url;
-                        if (currentUrl != '/signin') {
+                        if (currentUrl !== '/signin') {
                             localStorage.removeItem('token');
-                            this.router.navigate(['/signin'], { queryParams: { next: currentUrl }})
+                            this.router.navigate(['/signin'], { queryParams: { next: currentUrl }});
                         }
                     }
                 }
             })
-        )
+        );
     }
 }

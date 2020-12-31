@@ -34,8 +34,8 @@ export class AuthService {
 
   getNextUrl() {
     this.route.queryParams.subscribe(params => {
-      if (params['next']) {
-        this.nextUrl = params['next'];
+      if (params.next) {
+        this.nextUrl = params.next;
         switch (this.nextUrl) {
           case '/dummy-url':
             this.nextUrl = null;
@@ -45,43 +45,43 @@ export class AuthService {
             break;
         }
       }
-    })
-    return this.nextUrl
+    });
+    return this.nextUrl;
   }
 
   performLogin(token, expires?: Date, msg?: string) {
-    let expiryDate = null
+    let expiryDate = null;
     if (expires) {
-      expiryDate = expires
+      expiryDate = expires;
     }
 
     localStorage.setItem('token', token);
-    const nextUrl = this.getNextUrl()
+    const nextUrl = this.getNextUrl();
     if (nextUrl) {
-      this.router.navigate([nextUrl])
+      this.router.navigate([nextUrl]);
     } else {
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     }
   }
 
   login(username: string, password: string): Observable<any> {
-    let httpOptions = this.apiService.createHeaders();
-    let apiLoginEndpoint = `${baseUrl}auth/login/`;
+    const httpOptions = this.apiService.createHeaders();
+    const apiLoginEndpoint = `${baseUrl}auth/login/`;
     const data = {
-      username: username,
-      password: password
-    }
+      username,
+      password
+    };
     return this.http.post(apiLoginEndpoint, data, httpOptions);
   }
   register(data: any): Observable<any> {
-    let httpOptions = this.apiService.createHeaders()
-    let apiRegisterEndpoint = `${baseUrl}auth/register/`;
+    const httpOptions = this.apiService.createHeaders();
+    const apiRegisterEndpoint = `${baseUrl}auth/register/`;
     const items = {
       username: data.username,
       email: data.email,
       password: data.password,
       password2: data.password2
-    }
+    };
     return this.http.post(apiRegisterEndpoint, items, httpOptions);
   }
 }
