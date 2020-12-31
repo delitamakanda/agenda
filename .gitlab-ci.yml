@@ -5,6 +5,16 @@ before_script:
 
 build:
   stage: build
-  script: npm test --watch=false
+  script:
+    # Install dependencies
+    - npm install
+    # Build App
+    - npm run build
+    # Test App
+    - npm test --watch=false
   only:
     - master
+
+cache:
+    paths:
+        - node_modules/
