@@ -19,9 +19,9 @@ export class Tab1Page implements OnInit {
     const status = await Network.getStatus();
     this.isOnline = status.connected;
 
-    Network.addListener('networkStatusChange', (status) => {
-      this.isOnline = status.connected;
-    })
+    Network.addListener('networkStatusChange', (s) => {
+      this.isOnline = s.connected;
+    });
   }
 
   errorImage(evt: any) {
