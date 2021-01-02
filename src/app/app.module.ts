@@ -23,6 +23,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 import { LanguagePopoverPageModule } from './pages/language-popover/language-popover.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,7 +43,8 @@ import { LanguagePopoverPageModule } from './pages/language-popover/language-pop
     }),
     ApiModule,
     LanguagePopoverPageModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,

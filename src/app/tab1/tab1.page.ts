@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsDataService } from '../api/data-services/news/news-data.service';
+import { Plugins } from '@capacitor/core';
+
+const { Network } = Plugins;
 
 @Component({
   selector: 'app-tab1',
@@ -8,9 +11,18 @@ import { NewsDataService } from '../api/data-services/news/news-data.service';
 })
 export class Tab1Page implements OnInit {
 
+  isOnline: boolean;
+
   constructor(private newsDataService: NewsDataService) { }
 
-  ngOnInit() { }
+  async ngOnInit() {
+    const status = await Network.getStatus();
+    this.isOnline = status.connected;
+
+    Network.addListener('networkStatusChange', (status) => {
+      this.isOnline = status.connected;
+    })
+  }
 
   errorImage(evt: any) {
     evt.target.src = './assets/images/image-news.jpeg';

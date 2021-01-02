@@ -4,6 +4,8 @@
   <app-custom-content title="NEWS">
   
     {{ 'home.Hello' | translate }}
+    <div *ngIf="isOnline">Online</div>
+    <div *ngIf="!isOnline">Offline</div>
     <ion-card *ngFor="let item of [1,2,3,4]">
       <img (error)="errorImage($event)"
         [src]="'https://image.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'" />
